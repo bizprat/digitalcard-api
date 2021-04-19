@@ -3,6 +3,11 @@
 const path = require('path')
 const AutoLoad = require('fastify-autoload')
 
+const mongoose = require('mongoose')
+
+
+mongoose.connect(process.env.DB_LINK, { useNewUrlParser: true, useCreateIndex: true, useUnifiedTopology: true })
+
 module.exports = async function (fastify, opts) {
   // Place here your custom code!
 
